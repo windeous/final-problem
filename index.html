@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Final Problem — A Challenge for Mr. Klajming</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Special+Elite&family=Mrs+Saint+Delafield&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- grain + fog atmosphere -->
+<div class="grain" aria-hidden="true"></div>
+<div class="fog" aria-hidden="true"><span></span><span></span><span></span></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<!-- ============ THE ENVELOPE ============ -->
+<div id="envelope-screen">
+  <div class="env-inner">
+    <p class="env-post">Delivered by hand &middot; No return address</p>
+    <div class="envelope">
+      <div class="env-flap"></div>
+      <div class="env-body">
+        <p class="env-to">To&nbsp;Mr.&nbsp;Matej&nbsp;Klajming</p>
+        <p class="env-addr">221B Baker Street<br>London, N.W.</p>
+        <p class="env-urgent">Strictly Personal</p>
+      </div>
+      <button class="seal" id="seal" aria-label="Break the seal">
+        <span class="seal-half left"><span class="seal-m">M</span></span>
+        <span class="seal-half right"><span class="seal-m">M</span></span>
+      </button>
+    </div>
+    <p class="env-hint">Break the seal</p>
+  </div>
+</div>
+
+<!-- fixed case tracker -->
+<aside class="tracker" aria-label="Case progress">
+  <span class="tracker-label">Clues</span>
+  <span class="tracker-dot" data-dot="1"></span>
+  <span class="tracker-dot" data-dot="2"></span>
+  <span class="tracker-dot" data-dot="3"></span>
+</aside>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="ink-img hero-bg" data-src="img/thames.jpg" data-seed="7" data-mode="time"></div>
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <p class="hero-kicker reveal-up">A private communication</p>
+    <h1 class="hero-title" aria-label="The Final Problem">
+      <span class="t-small">The</span>
+      <span class="t-big">Final Problem</span>
+    </h1>
+    <div class="ornament reveal-up"><span></span>&#10086;<span></span></div>
+    <p class="hero-sub reveal-up">From <em>Professor James Moriarty</em><br>to <em>Mr. Matej Klajming</em>, consulting detective</p>
+  </div>
+  <div class="scroll-cue"><span>Read on, if you dare</span><i></i></div>
+</section>
+
+<!-- ============ THE LETTER ============ -->
+<section class="letter-section" id="letter">
+  <div class="letter paper">
+    <p class="letter-date">London, a foggy Thursday</p>
+    <div class="letter-body" id="letter-body">
+      <p>My dear Klajming,</p>
+      <p>You have been a thorn in my side for far too long. Every web I have spun, you have unpicked. Every perfect crime, you have ruined with that insufferable little magnifying glass of yours.</p>
+      <p>And so I find myself in a generous mood. I have prepared a game. <strong>One final game</strong>, played by my rules.</p>
+      <p>Somewhere far from Baker Street there is a door. Behind it lies a room, and inside that room waits the most devious puzzle I have ever designed. Your name is already on the guest list.</p>
+      <p>But I will not simply <em>hand</em> you the key. Three clues stand between you and that door. Solve them, and the invitation is yours. Fail, and you will have proven what I have always suspected: that you are merely a clever man with a hat.</p>
+      <p>The game, as you are so fond of saying, is afoot.</p>
+    </div>
+    <div class="letter-sign">
+      <span class="sig">J. Moriarty</span>
+      <span class="sig-sub">Professor of Mathematics (retired)</span>
+    </div>
+    <div class="mini-seal">M</div>
+  </div>
+</section>
+
+<!-- ============ THE PLAYERS ============ -->
+<section class="players">
+  <h2 class="section-title reveal-up"><span>Dramatis Personae</span></h2>
+  <div class="players-grid">
+    <figure class="player">
+      <div class="ink-img portrait" data-src="img/holmes.jpg" data-seed="3"></div>
+      <figcaption>
+        <span class="fig-role">The Detective</span>
+        <span class="fig-name">M. Klajming</span>
+        <span class="fig-note">Of 221B Baker Street. Observant. Insufferable. Owns too many coats.</span>
+      </figcaption>
+    </figure>
+    <div class="versus reveal-up">vs.</div>
+    <figure class="player">
+      <div class="ink-img portrait" data-src="img/moriarty.jpg" data-seed="11" data-pos="xMidYMin"></div>
+      <figcaption>
+        <span class="fig-role">The Napoleon of Crime</span>
+        <span class="fig-name">Prof. J. Moriarty</span>
+        <span class="fig-note">The spider at the centre of the web. Writes the rules. Rarely loses.</span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ CLUE I ============ -->
+<section class="clue" id="clue1" data-clue="1">
+  <div class="clue-media">
+    <div class="ink-img wide" data-src="img/blackman.jpg" data-seed="21"></div>
+  </div>
+  <div class="clue-card paper">
+    <p class="clue-num">Clue the First</p>
+    <h3 class="clue-title">The Cipher</h3>
+    <p class="clue-text">A riddle, hidden inside a cipher. I took the liberty of moving every letter <strong>three steps forward</strong> in the alphabet. Undo my work, then answer the question it asks.</p>
+    <p class="cipher-line" aria-label="Cipher text">WKH PRUH BRX WDNH,<br>WKH PRUH BRX OHDYH EHKLQG.<br><span>ZKDW DP L?</span></p>
+    <div class="alphabet" aria-hidden="true">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+    <form class="answer" data-answers="footsteps,footstep,steps,footprints,footprint,yourfootsteps,myfootsteps,tracks">
+      <input type="text" placeholder="What am I?" autocomplete="off" spellcheck="false" aria-label="Answer to clue one">
+      <button type="submit">Deduce</button>
+    </form>
+    <p class="feedback" aria-live="polite"></p>
+    <button class="hint-btn" data-hints="Count backwards: W becomes T, K becomes H, H becomes E. The first word is THE.|It reads: &quot;The more you take, the more you leave behind. What am I?&quot; Think about walking."></button>
+    <div class="solved-stamp">Solved</div>
+  </div>
+</section>
+
+<!-- ============ CLUE II ============ -->
+<section class="clue reverse" id="clue2" data-clue="2">
+  <div class="clue-media">
+    <div class="ink-img wide" data-src="img/wetmoon.jpg" data-seed="33"></div>
+  </div>
+  <div class="clue-card paper">
+    <p class="clue-num">Clue the Second</p>
+    <h3 class="clue-title">Invisible Ink</h3>
+    <p class="clue-text">Some words are written only for those who know how to look. Pass your lens over the page below.</p>
+    <div class="secret-paper" id="secret-paper">
+      <div class="secret-visible">
+        <p>Dear Sir, I trust the weather in London finds you well. The tea at Mrs. Hudson's is as dreadful as ever, I presume.</p>
+      </div>
+      <div class="secret-hidden" aria-hidden="true">
+        <p>I have keys, but open no locks.<br>I have space, but no room.<br>You may enter, but never go inside.<br><b>What am I?</b></p>
+      </div>
+      <div class="lens" aria-hidden="true"></div>
+      <span class="lens-tip">move your lens &mdash; or drag a finger &mdash; across the paper</span>
+    </div>
+    <form class="answer" data-answers="keyboard,akeyboard,computerkeyboard,thekeyboard,keyboards">
+      <input type="text" placeholder="What am I?" autocomplete="off" spellcheck="false" aria-label="Answer to clue two">
+      <button type="submit">Deduce</button>
+    </form>
+    <p class="feedback" aria-live="polite"></p>
+    <button class="hint-btn" data-hints="You are probably touching one right now. Or one of its cousins.|Q W E R T Y..."></button>
+    <div class="solved-stamp">Solved</div>
+  </div>
+</section>
+
+<!-- ============ CLUE III ============ -->
+<section class="clue" id="clue3" data-clue="3">
+  <div class="clue-media">
+    <div class="ink-img wide" data-src="img/holmes_moriarty.jpg" data-seed="45"></div>
+  </div>
+  <div class="clue-card paper">
+    <p class="clue-num">Clue the Third</p>
+    <h3 class="clue-title">The Sphinx&rsquo;s Question</h3>
+    <p class="clue-text">Long before either of us, a sphinx guarded a road and devoured all who could not answer her. I am kinder. I merely gloat.</p>
+    <p class="clue-text riddle">
+      I hold great cities, yet no house stands there;<br>
+      I raise up mountains where no tree takes root;<br>
+      I carry seas without a fish to spare,<br>
+      and roads that never felt a traveller&rsquo;s boot.
+    </p>
+    <form class="answer" data-answers="map,amap,themap,maps,atlas,anatlas,chart,globe,aglobe">
+      <input type="text" placeholder="What am I?" autocomplete="off" spellcheck="false" aria-label="Answer to clue three">
+      <button type="submit">Deduce</button>
+    </form>
+    <p class="feedback" aria-live="polite"></p>
+    <button class="hint-btn" data-hints="Everything I hold is drawn, not real.|Explorers unfold me. Your phone has one built in."></button>
+    <div class="solved-stamp">Solved</div>
+  </div>
+</section>
+
+<!-- ============ THE DOOR (locked) ============ -->
+<section class="door" id="door">
+  <div class="door-locked">
+    <div class="keyhole"></div>
+    <p>The door remains locked.</p>
+    <p class="door-sub"><span id="remaining">Three clues</span> stand between you and the truth.</p>
+  </div>
+</section>
+
+<!-- ============ THE REVEAL ============ -->
+<section class="finale" id="finale" hidden>
+  <div class="finale-hero">
+    <div class="ink-img finale-bg" data-src="img/reichenbach.jpg" data-seed="57"></div>
+    <div class="finale-shade"></div>
+    <div class="finale-text">
+      <p class="hero-kicker">Well, well, well.</p>
+      <h2>You found the door,<br>Klajming.</h2>
+      <p class="finale-p">I confess, I am almost impressed. Almost. Here is your invitation. Bring your wits, bring your friends, bring that ridiculous hat &mdash; you will need every last one of them.</p>
+      <p class="finale-p">One hour. One room. No way out but through the puzzle.</p>
+      <p class="finale-p sig-line">Do try not to disappoint me. &mdash; <span class="sig small">M.</span></p>
+    </div>
+  </div>
+
+  <div class="voucher-wrap">
+    <div class="voucher" id="voucher">
+      <div class="v-corner tl"></div><div class="v-corner tr"></div><div class="v-corner bl"></div><div class="v-corner br"></div>
+      <div class="v-inner">
+        <div class="v-top">
+          <span class="v-admit">Admit the Detective</span>
+          <span class="v-sub">&amp; such accomplices as he sees fit</span>
+        </div>
+        <div class="v-ornament"><span></span>&#10022;<span></span></div>
+        <p class="v-presents">The Cube Escape Room &middot; Skopje</p>
+        <h3 class="v-title">Sherlock Holmes</h3>
+        <p class="v-tag">An Escape Room Experience</p>
+        <div class="v-ornament"><span></span>&#10022;<span></span></div>
+
+        <div class="v-fields">
+          <div class="v-field full">
+            <span class="v-label">Issued to</span>
+            <span class="v-value name">Matej Klajming</span>
+          </div>
+          <div class="v-field full">
+            <span class="v-label">Voucher Number</span>
+            <span class="v-value mono" id="voucher-code">e61df71c-00b4-41ca-8f25-850b03a38ff6</span>
+          </div>
+          <div class="v-field">
+            <span class="v-label">Booking Number</span>
+            <span class="v-value mono">1046189</span>
+          </div>
+          <div class="v-field">
+            <span class="v-label">Valid</span>
+            <span class="v-value">Whenever you dare</span>
+          </div>
+        </div>
+
+        <div class="v-bottom">
+          <div class="v-sigblock">
+            <span class="sig">J. Moriarty</span>
+            <span class="v-label">Game Master</span>
+          </div>
+          <div class="v-wax">M</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="v-actions">
+      <button id="copy-code" class="btn">Copy voucher number</button>
+      <button id="print" class="btn ghost">Print the invitation</button>
+    </div>
+    <p class="v-note">Present the voucher &amp; booking number to The Cube Escape Room, Skopje to book your game.</p>
+    <p class="v-from">With love (and a little villainy) &mdash; Andrej</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>&ldquo;You have been warned.&rdquo;</p>
+  <button id="reset" class="reset">Burn the evidence &amp; start again</button>
+</footer>
+
+<script src="script.js?v=3"></script>
+</body>
+</html>
